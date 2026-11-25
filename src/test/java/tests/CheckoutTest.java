@@ -21,6 +21,9 @@ public class CheckoutTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
 
+        System.out.println("Current URL: " + driver.getCurrentUrl());
+        System.out.println("Page title: " + driver.getTitle());
+
         // Step 2: Add product
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.addBackpackToCart();
@@ -61,6 +64,7 @@ public class CheckoutTest extends BaseTest {
         // Login
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
+
 
         // Add product
         InventoryPage inventoryPage = new InventoryPage(driver);

@@ -1,5 +1,8 @@
 package pages;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -24,7 +27,9 @@ public class InventoryPage {
 
     // Actions
     public void addBackpackToCart() {
-        driver.findElement(addBackpackButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.elementToBeClickable(addBackpackButton)).click();
     }
 
     public void removeBackpackFromCart() {

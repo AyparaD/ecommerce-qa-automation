@@ -29,21 +29,25 @@ public class CheckoutPage {
     }
 
     // Actions
+
     public void enterFirstName(String firstName) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameField))
                 .sendKeys(firstName);
     }
 
     public void enterLastName(String lastName) {
-        driver.findElement(lastNameField).sendKeys(lastName);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameField))
+                .sendKeys(lastName);
     }
 
     public void enterPostalCode(String postalCode) {
-        driver.findElement(postalCodeField).sendKeys(postalCode);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(postalCodeField))
+                .sendKeys(postalCode);
     }
 
     public void clickContinue() {
-        driver.findElement(continueButton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueButton))
+                .click();
     }
 
     public void clickFinish() {

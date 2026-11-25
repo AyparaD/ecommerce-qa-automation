@@ -26,9 +26,12 @@ public class CartPage {
     public void openCart() {
         wait.until(ExpectedConditions.elementToBeClickable(cartIcon)).click();
     }
-
     public void clickCheckout() {
         wait.until(ExpectedConditions.elementToBeClickable(checkoutButton)).click();
+
+        wait.until(ExpectedConditions.urlContains("checkout-step-one.html"));
+
+        System.out.println("Current URL after checkout: " + driver.getCurrentUrl());
     }
 }
 
