@@ -1,11 +1,17 @@
 package api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Description;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
+
+@Epic("API Automation")
+@Feature("Post Management")
 
     public class PostApiTest {
 
@@ -18,6 +24,7 @@ import static org.hamcrest.Matchers.*;
         }
 
         // GET Request
+        @Description("Verify that user can retrieve a post successfully")
         @Test
         public void verifyGetPost() {
 

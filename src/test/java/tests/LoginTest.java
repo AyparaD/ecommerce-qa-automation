@@ -1,11 +1,14 @@
 package tests;
 
+import org.testng.annotations.Listeners;
+import utils.TestListener;
 import base.BaseTest;
 import pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
     @DataProvider(name = "invalidLoginData")

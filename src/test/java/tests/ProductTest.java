@@ -1,11 +1,15 @@
 package tests;
 
+import org.testng.annotations.Listeners;
+import utils.TestListener;
 import base.BaseTest;
 import pages.LoginPage;
 import pages.InventoryPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
+@Listeners(TestListener.class)
 public class ProductTest extends BaseTest {
 
     @Test
