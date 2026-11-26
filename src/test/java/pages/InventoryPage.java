@@ -33,7 +33,11 @@ public class InventoryPage {
     }
 
     public void removeBackpackFromCart() {
-        driver.findElement(removeBackpackButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.elementToBeClickable(removeBackpackButton)).click();
+
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(shoppingCartBadge));
     }
 
     // Validation methods
